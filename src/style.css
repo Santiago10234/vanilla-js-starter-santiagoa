@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+main{
+    width: 1000px;
+}
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.contador{
+    margin-left: 10px;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    border: 1px solid rgb(156, 153, 153);
+}
+.contenedor-tareas{
+    margin-top: 20px;
+    height: 500px;
+    border: 1px solid;
+}
+.contenedor-contador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor-agregar{
+    display: grid;
+    grid-template-columns: auto;
+}
+.input-agregar{
+    
+    margin-bottom: 10px;
+    padding: 7px;
+    border-radius: 4px;
+    border: 1px solid rgb(156, 153, 153);
+}
+.button-agregar{
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 7px;
+    border-radius: 4px;
+    background: #6666FF;
+}
+.text-tareas{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100px;
+    text-align: center;
+
+}
