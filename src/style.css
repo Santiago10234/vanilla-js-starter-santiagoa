@@ -5,6 +5,7 @@ body{
 
 }
 h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
 }
 main{
@@ -39,4 +40,22 @@ main{
 }
 .input-agregar{
     
+    margin-bottom: 10px;
+    padding: 7px;
+    border-radius: 4px;
+    border: 1px solid rgb(156, 153, 153);
+}
+.button-agregar{
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 7px;
+    border-radius: 4px;
+    background: #6666FF;
+}
+.text-tareas{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100px;
+    text-align: center;
+
 }
