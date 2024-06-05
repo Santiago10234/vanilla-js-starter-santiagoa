@@ -25,9 +25,10 @@ main{
     border: 1px solid rgb(156, 153, 153);
 }
 .contenedor-tareas{
+    min-height: 500px;
     margin-top: 20px;
-    height: 500px;
     border: 1px solid;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .contenedor-contador{
     display: flex;
@@ -58,4 +59,12 @@ main{
     width: 100px;
     text-align: center;
 
+}
+.tareas{
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    
+}
+.check{
 }

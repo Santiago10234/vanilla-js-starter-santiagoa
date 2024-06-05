@@ -3,12 +3,18 @@ import { disconnect } from "process"
 // Inserte el código aquí
 let inputAgregar = document.getElementById("input-agregar")
 let contenedorTareas = document.getElementById("contenedorTareas")
+let contadorTareas = document.getElementById("contador-tareas")
 let agregar = document.getElementById("agregar")
 
+inputAgregar.addEventListener("keydown",(e)=>{
+    if (e.key=="Enter") {
+        darDatos()
+    }
+})
 
 async function datos() {
-    console.log("dsad")
-    try {
+    contenedorTareas.innerHTML = ""
+    try {   
         const respuesta = await fetch("http://localhost:3000/api/task")
         let datos = await respuesta.json()
         console.log(datos);
@@ -16,18 +22,27 @@ async function datos() {
             let div = document.createElement("div")
             let checkBox = document.createElement("input")
             checkBox.type = "checkbox"
+            checkBox.classList.add("check")
             let p = document.createElement("p")
+            p.classList.add("tareas")
             let btnElim = document.createElement("button")
+            btnElim.classList.add("eliminar")
             btnElim.innerHTML="Eliminar"
-            btnElim.addEventListener("click",()=>{
-                console.log(fun.id);
-            })
             p.innerHTML=fun.nombre
+            checkBox.addEventListener("click", ()=>{
+                if (checkBox.checked==true) {
+                    upCheckBox(fun.id)
+                    contadorTareas.value++
+                }else{
+                    contadorTareas.value--
+                }
+            })
+            btnElim.addEventListener("click",()=>{
+                elimTarea(fun.id)
+            })
             p.appendChild(checkBox)
-            
             p.appendChild(btnElim)
-            div.appendChild(p)
-            contenedorTareas.appendChild(div)
+            contenedorTareas.appendChild(p)
         });
     } catch (error) {
         console.error(error);
@@ -49,14 +64,49 @@ async function darDatos() {
         },
         body:JSON.stringify(tarea)
     })
+    datos()
     } catch (error) {
         console.error(error);
     }
 }
 
 agregar.addEventListener("click", function () {
-    datos()
+    darDatos()
 })
 
+//http://localhost:3000/api/task/id
+async function elimTarea(id) {
+    try {
+        const respuesta = await fetch( `http://localhost:3000/api/task/${id}`, {
+            method: "DELETE"
+        });
+        if (respuesta.ok) {
+            // Si la solicitud se completó con éxito, actualizamos la lista de tareas
+            await datos();
+            console.log("Tarea eliminada exitosamente");
+        } else {
+            console.error("Error al eliminar la tarea");
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-export{datos, darDatos}
+async function upCheckBox(id) {
+    try {
+        let task = {
+            estado:true
+        }
+    const respuesta = await fetch(`http://localhost:3000/api/task/${id}`,{
+        method:"PUT",
+        headers:{
+            "Content-type": "application/json"
+        },
+        body:JSON.stringify(task)
+    })
+    let data = await respuesta.json()
+    console.log(data)
+    } catch (error) {
+        console.log(error);
+    }
+}
