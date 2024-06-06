@@ -4,10 +4,28 @@
 <head>
 	<title>Ejemplo básico</title>
 	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-	<h1>La aplicación esta corriendo!</h1>
+	<main>
+		<h1>Tareas para hacer</h1>
+		<div class="contenedor">
+			<div class="contenedor-agregar">
+				<input id="input-agregar" class="input-agregar" type="text" placeholder="Ingresar tarea">
+				<button id="agregar" class="button-agregar">Agregar</button>
+			</div>
+				
+			<div class="contenedor-contador">
+				<p class="text-tareas">Tareas completadas</p>
+				<input id="contador-tareas" class="contador" type="text" value="0">
+			</div>
+		</div>
+		<div id="contenedorTareas" class="contenedor-tareas">
+
+		</div>
+	</main>
 
 	<script src="./index.js" type="module"></script>
 </body>
