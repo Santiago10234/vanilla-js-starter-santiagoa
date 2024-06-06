@@ -40,7 +40,6 @@ main{
     grid-template-columns: auto;
 }
 .input-agregar{
-    
     margin-bottom: 10px;
     padding: 7px;
     border-radius: 4px;
@@ -65,6 +64,4 @@ main{
     border: 1px solid black;
     padding: 10px;
     
-}
-.check{
 }

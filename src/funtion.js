@@ -1,4 +1,4 @@
-//http://localhost:3000/api/task/id
+import { datos } from "./get"
 async function elimTarea(id) {
     try {
         const respuesta = await fetch( `http://localhost:3000/api/task/${id}`, {
@@ -15,5 +15,13 @@ async function elimTarea(id) {
         console.error(error);
     }
 }
-
-export {elimTarea}
+async function loadTasks() {
+    try {
+        const response = await fetch("http://localhost:3000/api/task")
+        const tasks = await response.json();
+        tasks.forEach(datos())
+    } catch (error) {
+        console.error("ERROR",error)
+    }
+}
+export {elimTarea, loadTasks}
