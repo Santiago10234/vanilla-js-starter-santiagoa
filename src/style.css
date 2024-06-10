@@ -25,9 +25,16 @@ main{
     border: 1px solid rgb(156, 153, 153);
 }
 .contenedor-tareas{
+<<<<<<< HEAD
     margin-top: 20px;
     height: 500px;
     border: 1px solid;
+=======
+    min-height: 500px;
+    margin-top: 20px;
+    border: 1px solid;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+>>>>>>> logicaToDo
 }
 .contenedor-contador{
     display: flex;
@@ -39,7 +46,10 @@ main{
     grid-template-columns: auto;
 }
 .input-agregar{
+<<<<<<< HEAD
     
+=======
+>>>>>>> logicaToDo
     margin-bottom: 10px;
     padding: 7px;
     border-radius: 4px;
@@ -58,4 +68,13 @@ main{
     width: 100px;
     text-align: center;
 
+<<<<<<< HEAD
+=======
+}
+.tareas{
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    
+>>>>>>> logicaToDo
 }
