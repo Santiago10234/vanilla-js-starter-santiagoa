@@ -1,4 +1,4 @@
-async function upCheckBox(id) {
+async function upCheckBox(id) { 
     try {
         const resposePut = await fetch(`http://localhost:3000/api/task/${id}`)
         const dataPut = await resposePut.json()
