@@ -1,6 +1,8 @@
 import { elimTarea } from "./funtion"
 let contadorTareas = document.getElementById("contador-tareas")
 import { upCheckBox } from "./update"
+
+
 async function datos() {
     // limpia el contenido del contenedor de tareas 
     contenedorTareas.innerHTML = ""
@@ -12,7 +14,7 @@ async function datos() {
            //Se crearon las etiquetas que se van a usar para la lista de tareas
             let checkBox = document.createElement("input")
             checkBox.type = "checkbox"
-            checkBox.checked = fun.estado
+            checkBox.checked = fun.estado // Al refrescar la pagina no se elimina el checkBox marcado
             if (checkBox.checked) {
                 contadorTareas.value++
             }

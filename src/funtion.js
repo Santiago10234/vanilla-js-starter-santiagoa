@@ -15,6 +15,7 @@ async function elimTarea(id) {
         console.error(error);
     }
 }
+// funcion para cargar las tareas cuando se refresca la pagina 
 async function loadTasks() {
     try {
         const response = await fetch("http://localhost:3000/api/task")
