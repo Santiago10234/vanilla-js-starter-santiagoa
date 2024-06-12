@@ -7,7 +7,7 @@ async function elimTarea(id) {
         if (respuesta.ok) {
             // Si la solicitud se completó con éxito, actualizamos la lista de tareas
             await datos();
-            console.log("Tarea eliminada exitosamente");
+            alert("Tarea eliminada exitosamente");
         } else {
             console.error("Error al eliminar la tarea");
         }
